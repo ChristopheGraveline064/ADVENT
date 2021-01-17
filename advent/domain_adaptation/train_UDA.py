@@ -83,7 +83,7 @@ def train_advent(model, trainloader, targetloader, cfg):
     # interp_aux_source = nn.Upsample(size=(180, 320), mode='bilinear', align_corners=True)   # H/4
 
     weighted_bce_loss = WeightedBCEWithLogitsLoss()
-    # criterion_seg = nn.CrossEntropyLoss(ignore_index=255)
+    criterion_seg = nn.CrossEntropyLoss(ignore_index=255)
 
     # labels for adversarial training
     source_label = 0
